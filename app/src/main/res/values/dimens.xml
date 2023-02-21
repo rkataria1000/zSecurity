@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="regular_margin">16dp</dimen>
+    <dimen name="normal_elevation">16dp</dimen>
+    <dimen name="normal_title">22sp</dimen>
+    <dimen name="normal_text">16sp</dimen>
+</resources>
