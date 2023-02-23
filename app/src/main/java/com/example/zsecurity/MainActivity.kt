@@ -10,28 +10,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val bottomBar = findViewById<BottomNavigationView>(R.id.bottom_nav_bar)
+
         bottomBar.setOnItemSelectedListener {
-            if (it.itemId == R.id.Shield)
-            {
-                inflateFragment(GuardFragment.newInstance())
-            }
-            else if (it.itemId == R.id.nav_home)
-            {
-                inflateFragment(HomeFragment.newInstance())
-            }
-            else if (it.itemId == R.id.dash_board)
-            {
-                inflateFragment(DashboardFragment.newInstance())
-            }
-            else
-            {
-                inflateFragment(ProfileFragment.newInstance())
+            when (it.itemId) {
+                R.id.profile -> {
+                    inflateFragment(ProfileFragment.newInstance())
+                }
+                R.id.Shield -> {
+                    inflateFragment(GuardFragment.newInstance())
+                }
+                R.id.dash_board -> {
+                    inflateFragment(DashboardFragment.newInstance())
+                }
+                else -> {
+                    inflateFragment(HomeFragment.newInstance())
+                }
             }
 
             true
         }
 
-
+        bottomBar.selectedItemId = R.id.nav_home
 
     }
 
